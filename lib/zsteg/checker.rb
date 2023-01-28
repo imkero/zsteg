@@ -381,14 +381,14 @@ module ZSteg
       end
 
       # utf-8 string matching, may be slow, may throw exceptions
-#      begin
-#        t = data.
-#          encode('UTF-16', 'UTF-8', :invalid => :replace, :replace => '').
-#          encode!('UTF-8', 'UTF-16')
-#        r = t.scan(/\p{Word}{#{DEFAULT_MIN_STR_LEN},}/)
-#        r if r.any?
-#      rescue
-#      end
+      begin
+        t = data.
+          encode('UTF-16', 'UTF-8', :invalid => :replace, :replace => '').
+          encode!('UTF-8', 'UTF-16')
+        r = t.scan(/\p{Word}{#{DEFAULT_MIN_STR_LEN},}/)
+        r if r.any?
+      rescue
+      end
     end
 
     private
